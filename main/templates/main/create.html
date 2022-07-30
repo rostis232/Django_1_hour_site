@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Створити нову задачу{% endblock %}
+
+{% block content %}
+    <main class="container">
+    <div class="bg-light p-5 rounded">
+    <h1>Створити нову задачу</h1>
+    <form method="post">
+    {% csrf_token %}
+        <h3>Назва:</h3>
+        {{ form.title }}<br>
+        <h3>Опис:</h3>
+        {{ form.description }}<br>
+
+    <button type="submit" class="btn btn-success">Додати</button>
+    <span>{{ error }}</span>
+    </form>
+    </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <br><br>
+    {% if todos %}
+    <main class="container">
+    {% for todo in todos %}
+    <div class="bg-light p-5 rounded">
+        <h1>{{ todo.title }}</h1>
+        <p class="lead">{{ todo.description }}</p>
+    </div><br>
+    {% endfor %}
+</main>
+    {% else %}
+    <h2>Немає записів</h2>
+    {% endif %}
+{% endblock %}
